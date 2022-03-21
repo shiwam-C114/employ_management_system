@@ -10,7 +10,19 @@ function App() {
   const [salary, setSalary] = useState("")
 
   function postData() {
-    fetch("http://localhost:3000/employee").then(res=>res.json()).then(console.log)
+    fetch("http://localhost:3000/employee",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        department:dept,
+        gender:gender,
+        role:role,
+        salary:salary
+      })
+    }).then(res=>res.json()).then(console.log)
     console.log(name,dept, gender,role,salary);
   }
 
