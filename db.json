@@ -1,19 +1,20 @@
 {
-  "posts": [
+  "employee": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": "01",
+      "name": "some",
+      "department": "depName",
+      "gender": "gender",
+      "role": "ex",
+      "salary": "100"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "02",
+      "name": "se",
+      "department": "epName",
+      "gender": "gende",
+      "role": "0x",
+      "salary": "1000"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
