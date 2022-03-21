@@ -1,0 +1,11 @@
+{
+    "employee": [
+        {
+            "name":"some",
+            "department":"depName",
+            "gender":"gender",
+            "role":"ex",
+            "salary":"100"
+        }
+    ]
+  }
