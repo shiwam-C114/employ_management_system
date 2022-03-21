@@ -1,9 +1,10 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Display from './display';
 
 function App() {
+  var obbj = {}
   const [name, setName] = useState("")
   const [dept, setDept] = useState("")
   const [gender, setGender] = useState("")
@@ -31,13 +32,24 @@ function App() {
   }
 
   function filter(value) {
+
     if (value === "") {
-      fetch(`http://localhost:3000/employee`).then(res=>res.json()).then(data=>{Display({data})})
+      fetch(`http://localhost:3000/employee`).then(res=>res.json()).then(data=>{
+        obbj.data = data
+        Display(obbj)})
       
     }else{
-      fetch(`http://localhost:3000/employee?department=${value}`).then(data=>{Display({data})})
+      fetch(`http://localhost:3000/employee?department=${value}`).then(res=>res.json()).then(data=>
+      {
+        obbj.data = data
+        Display(obbj)})
   }
+
+  
 }
+useEffect(() => {
+  return <Display data={data}/>
+}, [obbj])
 
   return (
   
