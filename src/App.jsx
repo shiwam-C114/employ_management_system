@@ -28,8 +28,16 @@ function App() {
 
     fetch("http://localhost:3000/employee").then(res=>res.json()).then(data=>{setData(data);
   console.log(data)})
-    console.log(name,dept, gender,role,salary);
   }
+
+  function filter(value) {
+    if (value === "") {
+      fetch(`http://localhost:3000/employee`).then(res=>res.json()).then(data=>{Display({data})})
+      
+    }else{
+      fetch(`http://localhost:3000/employee?department=${value}`).then(data=>{Display({data})})
+  }
+}
 
   return (
   
@@ -43,6 +51,12 @@ function App() {
       <input type="text" name="" id="" placeholder='salary' onChange={(e)=>{setSalary(e.target.value)}} />
       <button onClick={()=>{postData()}} >Add employee</button>
      </div>
+
+     <button onClick={()=>{filter("")}}>Show All Departments</button>
+     <button onClick={()=>{filter("Marketing")}}>Show Marketing</button>
+     <button onClick={()=>{filter("HR")}}>Show HR</button>
+     <button onClick={()=>{filter("IT")}}>Show IT</button>
+     <button onClick={()=>{filter("Finance")}}>Show Finance</button>
 
     <Display data={data} />
 

@@ -3,7 +3,7 @@
     {
       "id": "01",
       "name": "some",
-      "department": "depName",
+      "department": "Marketing",
       "gender": "gender",
       "role": "ex",
       "salary": "100"
@@ -11,14 +11,14 @@
     {
       "id": "02",
       "name": "se",
-      "department": "epName",
+      "department": "HR",
       "gender": "gende",
       "role": "0x",
       "salary": "1000"
     },
     {
       "name": "shi",
-      "department": "dep",
+      "department": "Finance",
       "gender": "male",
       "role": "rool",
       "salary": "1",
@@ -26,19 +26,27 @@
     },
     {
       "name": "me ",
-      "department": "dept",
+      "department": "IT",
       "gender": "male",
       "role": "role",
-      "salary": "sal",
+      "salary": "300",
       "id": "Wtj033C"
     },
     {
       "name": "me ",
-      "department": "dept",
+      "department": "IT",
       "gender": "male",
       "role": "role",
-      "salary": "sal",
+      "salary": "200",
       "id": "nt-mu2R"
+    },
+    {
+      "name": "",
+      "department": "",
+      "gender": "",
+      "role": "",
+      "salary": "",
+      "id": "XhthnoO"
     }
   ]
 }
