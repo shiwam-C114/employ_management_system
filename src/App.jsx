@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
+import Display from './display';
 
 function App() {
   const [name, setName] = useState("")
@@ -8,6 +9,7 @@ function App() {
   const [gender, setGender] = useState("")
   const [role, setRole] = useState("")
   const [salary, setSalary] = useState("")
+  const [data, setData] = useState([])
 
   function postData() {
     fetch("http://localhost:3000/employee",{
@@ -22,7 +24,10 @@ function App() {
         role:role,
         salary:salary
       })
-    }).then(res=>res.json()).then(console.log)
+    })
+
+    fetch("http://localhost:3000/employee").then(res=>res.json()).then(data=>{setData(data);
+  console.log(data)})
     console.log(name,dept, gender,role,salary);
   }
 
@@ -39,7 +44,7 @@ function App() {
       <button onClick={()=>{postData()}} >Add employee</button>
      </div>
 
-
+    <Display data={data} />
 
     </div>
   );
